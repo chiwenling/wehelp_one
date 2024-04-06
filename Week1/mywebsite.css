@@ -504,6 +504,8 @@ nav li:first-child{
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
     
     .row1-1, .row1-2,.row1-3, .row2-1, .row2-2, .row2-3, .row2-4, .row3-1, .row3-2, .row3-3, .row3-4, .row4-1, .row4-2{
@@ -517,7 +519,7 @@ nav li:first-child{
         display: flex;
         flex-direction: column;
         height: auto;
-    
+        margin-top: 0px;
     }
 
 }
