@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mywebsite</title>
+    <link rel="stylesheet" href="mywebsite.css">
+
+</head>
+<body>
+    <!-- 上排標題 -->
+    <div class="header">
+        <nav>
+            <ul>
+                <li class="destop"><a href="#">Mywebsite</a></li>
+                <li class="destopBar"><a href="#">Item1</a></li>
+                <li class="destopBar"><a href="#">Item2</a></li>
+                <li class="destopBar"><a href="#">Item3</a></li>
+                <li class="destopBar"><a href="#">Item4</a></li>
+                <li class="burgericon" onclick = showBar()><a href="#"><img src="pic/menu_icon.png"></a></li>
+            </ul>
+        </nav>   
+        <nav>
+            <ul class="burgerBar">
+                <li class="cross_icon" onclick = hideBar()><a href="#"><img src="pic/cross_icon.png" height="30px"></a></li>
+                <li class="mobile"><a href="#">Item1</a></li>
+                <li class="mobile"><a href="#">Item2</a></li>
+                <li class="mobile"><a href="#">Item3</a></li>
+                <li class="mobile"><a href="#">Item4</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        function showBar(){
+            const burgerBar = document.querySelector('.burgerBar');
+            burgerBar.style.display ="block";
+        }
+
+        function hideBar(){
+            const burgerBar = document.querySelector('.burgerBar');
+            burgerBar.style.display ="none";
+        }
+    </script>
+
+    <!-- 歡迎語言 -->
+    <div class="bar">Welcome to MyHome</div>
+    
+    <div class="container1">
+        <div class="row1-1">
+            <img class="pic" src ="pic/pic1.jpg">
+            Promotion 1</div>
+        <div class="row1-2">
+            <img class="pic" src ="pic/pic1.jpg">
+            Promotion 2</div>
+        <div class="row1-3">
+            <img class="pic" src ="pic/pic1.jpg">
+            Promotion 3</div>
+    </div>
+
+   <!-- 作業1  -->
+    <div class="requirement1">
+        <div class="container2">
+            <div class="row2-1">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            <div class="row2-2">
+                <div class="row2-2-1">
+                    <img class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row2-2-2">
+                    <img class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>
+            <div class="row2-3">
+                <div class="row2-3-1">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row2-3-2">
+                    <img class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>   
+        </div>
+
+        <div class="container3">
+            <div class="row3-1">
+                <img class="pic1" src ="pic/pic1.jpg">
+                <img class="star" src="pic/star.png">
+            </div>
+            <div class="row3-2">
+                <div class="row3-2-1">
+                    <img class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row3-2-2">
+                    <img class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>
+            <div class="row3-3">
+                <div class="row3-3-1">
+                    <img class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row3-3-2">
+                    <img class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>   
+        </div>
+    </div>
+
+    <!-- 作業2  -->
+    <div class="requirement2">
+        <div class="container2">
+            <div class="row2-1">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row2-2">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row2-3">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row2-4">
+                <img class="pic1" src ="pic/pic1.jpg">
+                <img class="star" src="pic/star.png">
+            </div>        
+         </div>
+
+         <div class="container3">
+            <div class="row3-1">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row3-2">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row3-3">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row3-4">
+                <img class="pic1" src ="pic/pic1.jpg">
+                <img class="star" src="pic/star.png">
+            </div>        
+         </div>
+
+         <div class="container4">
+            <div class="row4-1">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row4-2">
+                    <img class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>      
+         </div>
+
+
+
+
+
+</body>
+</html>
