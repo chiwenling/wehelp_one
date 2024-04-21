@@ -60,10 +60,15 @@ def get_one_page(url):
 
 #note:要換三頁
 #note:要儲存成csv
-data = []
-data.extend(get_one_page("https://www.ptt.cc/bbs/Lottery/index.html"))
-data.extend(get_one_page("https://www.ptt.cc/bbs/Lottery/index2080.html"))
-data.extend(get_one_page("https://www.ptt.cc/bbs/Lottery/index2079.html"))
+
+start = 2081
+num = 3 
+end = start - num 
+
+data=[]
+for i in range(start,end,-1):
+    url="https://www.ptt.cc/bbs/Lottery/index"+str(i)+".html"
+    data.extend(get_one_page(url))
 
 csv_file = "article.csv"
 with open(csv_file, "w", newline="", encoding="utf-8") as f:

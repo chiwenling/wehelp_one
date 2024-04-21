@@ -42,7 +42,6 @@
         }
 
         
-       
         function fetchSpotData() {
             fetch('https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment-1')
             .then(response => {
@@ -52,60 +51,30 @@
                 return response.json();
             })
             .then(data => {
-                
                 let promotion1Title = data.data.results[0].stitle;
                 document.getElementById('promotion1').textContent = promotion1Title;
-                let promotion1Image = data.data.results[0].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image1').src = 'https://' + promotion1Image;
 
                 let promotion2Title = data.data.results[1].stitle;
                 document.getElementById('promotion2').textContent = promotion2Title;
-                let promotion2Image = data.data.results[1].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image2').src = 'https://' + promotion2Image;
 
                 let promotion3Title = data.data.results[2].stitle;
                 document.getElementById('promotion3').textContent = promotion3Title;
-                let promotion3Image = data.data.results[2].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image3').src = 'https://' + promotion3Image;
 
-                let promotion4Image = data.data.results[3].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image2-1').src = 'https://' + promotion4Image;
-                document.getElementById("m2-1").src = 'https://' + promotion4Image;
+                for (let i = 0; i < 3; i++) {
+                    let promotionImage = data.data.results[i].filelist.split('https://')[1].split('jpg')[0] + 'jpg';
+                    document.getElementById('image' + (i + 1)).src = 'https://' + promotionImage;
+                }
 
-                let promotion5Image = data.data.results[4].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image2-2').src = 'https://' + promotion5Image;
-                document.getElementById("m2-2").src = 'https://' + promotion5Image;
+                let index_num = [3, 4, 5, 6, 7, 8 ,9 ,10 ,11];
+                let web_image = ['image2-1', 'image2-2', 'image2-3', 'image2-4', 'image2-5','image3-1','image3-2','image3-3','image3-4','image3-5'];
+                let m_Imagee = ['m2-1', 'm2-2', 'm2-3', 'm2-4', 'm3-1', 'm3-2', 'm3-3','m3-4', 'm4-1'];
 
-                let promotion6Image = data.data.results[5].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image2-3').src = 'https://' + promotion6Image;
-                document.getElementById("m2-3").src = 'https://' + promotion6Image;
-
-                let promotion7Image = data.data.results[6].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image2-4').src = 'https://' + promotion7Image;
-                document.getElementById("m2-4").src = 'https://' + promotion7Image;
-
-                let promotion8Image = data.data.results[7].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image2-5').src = 'https://' + promotion8Image;
-                document.getElementById("m3-1").src = 'https://' + promotion8Image;
-
-                let promotion9Image = data.data.results[8].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image3-1').src = 'https://' + promotion9Image;
-                document.getElementById("m3-2").src = 'https://' + promotion9Image;
-                
-                let promotion10Image = data.data.results[9].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image3-2').src = 'https://' + promotion10Image;
-                document.getElementById("m3-3").src = 'https://' + promotion10Image;
-
-                let promotion11Image = data.data.results[10].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image3-3').src = 'https://' + promotion11Image;
-                document.getElementById("m3-4").src = 'https://' + promotion11Image;
-
-                let promotion12Image = data.data.results[11].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
-                document.getElementById('image3-4').src = 'https://' + promotion12Image;
-                document.getElementById("m4-1").src = 'https://' + promotion12Image;
-                console.log(promotion12Image)
-
-            })
+                index_num.forEach(function(index, idx) {
+                    let promotionImage = data.data.results[index].filelist.split('https://')[1].split('jpg')[0] + 'jpg';
+                    document.getElementById(web_image[idx]).src = 'https://' + promotionImage;
+                    document.getElementById(m_Imagee[idx]).src = 'https://' + promotionImage;
+                });                
+            })   
             .catch(error => console.error(error));
         }
         window.onload = fetchSpotData;
