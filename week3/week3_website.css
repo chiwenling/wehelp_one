@@ -1,0 +1,543 @@
+.requirement1{
+    display: block;
+}
+
+.requirement2{
+    display: none;
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family:'Times New Roman', Times, serif;
+}
+
+nav ul{
+    list-style: none;
+    background-color: white;
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+
+}
+
+nav a{
+    height:100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+.burgerBar{
+    position:fixed;
+    top:0;
+    right:0;
+    height:100vh;
+    width:50%;
+    z-index:999;
+    background-color: white;
+    box-shadow:-5px 0 5px rgba(0, 0 ,0, 0.2);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.burgericon{
+    display: none;
+}
+
+
+/*打招呼*/
+.bar{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    width: 100%;
+    height: 250px;
+    background-color: lightblue;
+}
+
+.container1{
+    display: flex;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width:1200px;
+}
+
+.row1-1,.row1-2,.row1-3{
+    display: flex;
+    align-items:center;
+    height:50px;
+    width: 33%;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: lightblue;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-display:left;
+}
+
+.container2{
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width:1200px;
+    height: 200px;
+}
+
+.row2-1,.row2-2,.row2-3{
+    display: flex;
+    align-items:center;
+    width: 33%;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+} 
+
+.row2-2-1, .row2-3-1{
+    display: flex;
+    margin-right: 10px;
+    height: 100%;
+    width:  50%;
+    position: relative;
+}
+
+.row2-2-2,.row2-3-2{
+    display: flex;
+    margin-left: 10px;
+    height: 100%;
+    width:  50%;
+    position: relative;
+}
+
+.row2-1::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"國立故宮博物院";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+.star{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    opacity: 70%;
+    top:5%;
+    right:5%;
+}
+
+
+.row2-2-1::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"北投圖書館";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+.row2-2-2::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"北投圖書館";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+.row2-3-1::before {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    content: "關渡、金色水岸、八里左岸自行車道";
+    width: 180px;
+    height: 40px;
+    bottom: 0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
+
+
+.row2-3-2::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"大安森林公園";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+.container3{
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width:1200px;
+    height: 200px;
+    
+}
+
+.row3-1,.row3-2,.row3-3{
+    display: flex;
+    align-items:center;
+    width: 33%;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+} 
+
+.row3-2-1, .row3-3-1{
+    display: flex;
+    margin-right: 10px;
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+.row3-2-2,.row3-3-2{
+    display: flex;
+    margin-left: 10px;
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+
+
+.row3-2-1, .row3-2-2,.row3-3-1, .row3-3-2{
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+
+.row3-1::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"地熱谷";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+.row3-2-1::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    content:"南港山系-象山親山步道";
+    width: 180px;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
+
+.row3-2-2::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"艋舺龍山寺";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+.row3-3-1::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"行天宮";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+.row3-3-2::before{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content:"梅庭";
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: black;
+    background-color: white;
+    opacity: 60%;
+    position: absolute;
+}
+
+
+.pic{
+    width: 80px;
+    height: 50px;
+    margin-right: 15px;
+} 
+
+.pic1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+} 
+
+.pic2{
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+} 
+
+@media screen and (max-width: 1200px){
+    .requirement1{
+        display: none;
+    }
+
+    .requirement2{
+        display: block;
+    }
+    
+    .container1{
+        width: 90%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row1-1, .row1-2{
+        width:calc(50% - 20px);   
+    }
+
+    .row1-3{
+        width:100%;
+    }
+
+
+    .container2,.container3{
+        width: 90%;
+        display: flex;
+        margin-top: 0px;
+    }
+
+    .container4{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+    }
+
+    .row2-1, .row2-2, .row2-3, .row2-4{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        width: 25%;
+        margin: 10px;
+        position: relative;
+    }
+
+    .row3-1, .row3-2, .row3-3, .row3-4{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        width: 25%;
+        margin: 10px;
+        position: relative;
+    }
+
+    .row4-1, .row4-2{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        width: 60%;
+        height: 100%;
+        margin: 10px;
+        position: relative;
+
+    }
+    
+    .row2-1::before, .row2-2::before, .row2-3::before, .row2-4::before,.row3-1::before,.row3-2::before,.row3-3::before,.row3-4::before,.row4-1::before,.row4-2::before{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40px;
+        bottom:0;
+        color: black;
+        background-color: white;
+        opacity: 60%;
+        position: absolute;
+        position: absolute;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+        justify-content:space-around;
+    }
+    .row2-1::before{
+        content:"國立故宮博物院";  
+    }
+    .row2-2::before{
+        content:"北投圖書館";  
+    }
+    .row2-3::before{
+        content:"北投圖書館";  
+    }
+    .row2-4::before{
+        content:"關渡、金色水岸、八里左岸自行車道"; 
+    }
+    .row3-1::before{
+        content:"大安森林公園";
+    }
+    .row3-2::before{
+        content:"地熱谷";  
+    }
+    .row3-3::before{
+        content:"南港山系-象山親山步道 ";   
+    }
+    .row3-4::before{
+        content:"艋舺龍山寺";  
+    }
+    .row4-1::before{
+        content:"行天宮";  
+    }
+    .row4-2::before{
+        content:"梅庭";  
+    }
+}
+
+@media screen and (max-width:600px) {
+    .burgericon{
+        display: block;
+    }
+
+    .destopBar{
+        display: none;
+    }
+
+    .cross_icon{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .bar{
+        font-size: 35px;
+    }
+
+    .container1{
+        width: 90%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    
+    .row1-1, .row1-2,.row1-3, .row2-1, .row2-2, .row2-3, .row2-4, .row3-1, .row3-2, .row3-3, .row3-4, .row4-1, .row4-2{
+        width: 100%;
+        height: 100%;
+        margin: 1%;
+        margin-bottom:20px;
+    }
+
+    .container2, .container3, .container4{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: 0px;
+    }
+
+}

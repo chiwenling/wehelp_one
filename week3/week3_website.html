@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mywebsite</title>
+    <link rel="stylesheet" href="week3_website.css">
+
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <ul>
+                <li class="destop"><a href="#">Mywebsite</a></li>
+                <li class="destopBar"><a href="#">Item1</a></li>
+                <li class="destopBar"><a href="#">Item2</a></li>
+                <li class="destopBar"><a href="#">Item3</a></li>
+                <li class="destopBar"><a href="#">Item4</a></li>
+                <li class="burgericon" onclick = showBar()><a href="#"><img src="pic/menu_icon.png"></a></li>
+            </ul>
+        </nav>   
+        <nav>
+            <ul class="burgerBar">
+                <li class="cross_icon" onclick = hideBar()><a href="#"><img src="pic/cross_icon.png" height="30px"></a></li>
+                <li class="mobile"><a href="#">Item1</a></li>
+                <li class="mobile"><a href="#">Item2</a></li>
+                <li class="mobile"><a href="#">Item3</a></li>
+                <li class="mobile"><a href="#">Item4</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        function showBar(){
+            const burgerBar = document.querySelector('.burgerBar');
+            burgerBar.style.display ="block";
+        }
+
+        function hideBar(){
+            const burgerBar = document.querySelector('.burgerBar');
+            burgerBar.style.display ="none";
+        }
+
+        
+       
+        function fetchSpotData() {
+            fetch('https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment-1')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('沒東西');
+                }
+                return response.json();
+            })
+            .then(data => {
+                
+                let promotion1Title = data.data.results[0].stitle;
+                document.getElementById('promotion1').textContent = promotion1Title;
+                let promotion1Image = data.data.results[0].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image1').src = 'https://' + promotion1Image;
+
+                let promotion2Title = data.data.results[1].stitle;
+                document.getElementById('promotion2').textContent = promotion2Title;
+                let promotion2Image = data.data.results[1].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image2').src = 'https://' + promotion2Image;
+
+                let promotion3Title = data.data.results[2].stitle;
+                document.getElementById('promotion3').textContent = promotion3Title;
+                let promotion3Image = data.data.results[2].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image3').src = 'https://' + promotion3Image;
+
+                let promotion4Image = data.data.results[3].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image2-1').src = 'https://' + promotion4Image;
+                document.getElementById("m2-1").src = 'https://' + promotion4Image;
+
+                let promotion5Image = data.data.results[4].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image2-2').src = 'https://' + promotion5Image;
+                document.getElementById("m2-2").src = 'https://' + promotion5Image;
+
+                let promotion6Image = data.data.results[5].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image2-3').src = 'https://' + promotion6Image;
+                document.getElementById("m2-3").src = 'https://' + promotion6Image;
+
+                let promotion7Image = data.data.results[6].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image2-4').src = 'https://' + promotion7Image;
+                document.getElementById("m2-4").src = 'https://' + promotion7Image;
+
+                let promotion8Image = data.data.results[7].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image2-5').src = 'https://' + promotion8Image;
+                document.getElementById("m3-1").src = 'https://' + promotion8Image;
+
+                let promotion9Image = data.data.results[8].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image3-1').src = 'https://' + promotion9Image;
+                document.getElementById("m3-2").src = 'https://' + promotion9Image;
+                
+                let promotion10Image = data.data.results[9].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image3-2').src = 'https://' + promotion10Image;
+                document.getElementById("m3-3").src = 'https://' + promotion10Image;
+
+                let promotion11Image = data.data.results[10].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image3-3').src = 'https://' + promotion11Image;
+                document.getElementById("m3-4").src = 'https://' + promotion11Image;
+
+                let promotion12Image = data.data.results[11].filelist.split('https://')[1].split('jpg')[0] + 'jpg'; 
+                document.getElementById('image3-4').src = 'https://' + promotion12Image;
+                document.getElementById("m4-1").src = 'https://' + promotion12Image;
+                console.log(promotion12Image)
+
+            })
+            .catch(error => console.error(error));
+        }
+        window.onload = fetchSpotData;
+
+    </script>
+
+   
+    <div class="bar">Welcome to MyHome</div>
+
+    <div class="container1">
+        <div class="row1-1">
+            <img id = "image1" class="pic" src="pic/pic1.jpg">
+            <div id = "promotion1">Promotion 1</div> 
+        </div>
+        <div class="row1-2">
+            <img id = "image2" class="pic" src="pic/pic1.jpg">
+            <div id="promotion2">Promotion 2</div> 
+        </div>
+        <div class="row1-3">
+            <img id = "image3" class="pic" src="pic/pic1.jpg">
+            <div id="promotion3">Promotion 3</div> 
+        </div>
+    </div>
+
+   <!-- 作業1  -->
+    <div class="requirement1">
+        <div class="container2">
+            <div class="row2-1">
+                    <img id = "image2-1" class = "pic1" src = "pic/pic1.jpg">
+                    <img class = "star" src = "pic/star.png">
+            </div>
+            <div class="row2-2">
+                <div class="row2-2-1">
+                    <img id = "image2-2" class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row2-2-2">
+                    <img id = "image2-3" class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>
+            <div class="row2-3">
+                <div class="row2-3-1">
+                    <img id = "image2-4" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row2-3-2">
+                    <img id = "image2-5" class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>   
+        </div>
+
+        <div class="container3">
+            <div class="row3-1">
+                <img id = "image3-1" class="pic1" src ="pic/pic1.jpg">
+                <img class="star" src="pic/star.png">
+            </div>
+            <div class="row3-2">
+                <div class="row3-2-1">
+                    <img id = "image3-2" class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row3-2-2">
+                    <img id = "image3-3" class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>
+            <div class="row3-3">
+                <div class="row3-3-1">
+                    <img id = "image3-4" class="pic2" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+                </div>
+                <div class="row3-3-2">
+                    <img id = "image3-5" class="pic2" src ="pic/pic.jpeg">
+                    <img class="star" src="pic/star.png">
+                </div>
+            </div>   
+        </div>
+    </div>
+
+    <!-- 作業2  -->
+    <div class="requirement2">
+        <div class="container2">
+            <div class="row2-1">
+                    <img id = "m2-1" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row2-2">
+                    <img id = "m2-2" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row2-3">
+                    <img id = "m2-3" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row2-4">
+                <img id = "m2-4" class="pic1" src ="pic/pic1.jpg">
+                <img class="star" src="pic/star.png">
+            </div>        
+         </div>
+
+         <div class="container3">
+            <div class="row3-1">
+                    <img id = "m3-1" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row3-2">
+                    <img id = "m3-2" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row3-3">
+                    <img id = "m3-3" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row3-4">
+                <img id = "m3-4" class="pic1" src ="pic/pic1.jpg">
+                <img class="star" src="pic/star.png">
+            </div>        
+         </div>
+
+         <div class="container4">
+            <div class="row4-1">
+                    <img id = "m4-1" class="pic1" src ="pic/pic1.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>
+            
+            <div class="row4-2">
+                    <img class="pic1" src ="pic/pic.jpg">
+                    <img class="star" src="pic/star.png">
+            </div>      
+         </div>
+</body>
+</html>
