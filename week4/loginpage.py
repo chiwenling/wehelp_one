@@ -41,9 +41,11 @@ def login(request: Request, username:str=Form(""),password:str=Form("")):
         if  username == user["username"] and password == user["password"]:
             set_login_status(request, True) 
             break
+            
            
     if  session["SIGNED-IN"] == True:
-        return RedirectResponse(url="/member")
+        # return RedirectResponse(url="/member")
+        return templates.TemplateResponse("member.html", {"request": request})
     
     else:
         error_message = "帳號、或密碼輸入錯誤"
@@ -54,19 +56,20 @@ def login(request: Request, username:str=Form(""),password:str=Form("")):
 @app.get('/member')
 def member(request: Request):
     session = request.session
-    
+    RedirectResponse(url="/member")
     if "SIGNED-IN" in session and session["SIGNED-IN"]:
         return templates.TemplateResponse("member.html", {"request": request})
     else:
         return RedirectResponse(url="/")
 
-@app.post('/member')
-def member(request: Request):
-    session = request.session
-    if session.get("SIGNED-IN", False):
-        return templates.TemplateResponse("member.html", {"request": request})
-    else:
-        return RedirectResponse(url="/signout", status_code=401)
+# # 原本是post
+# @app.post('/member')
+# def member(request: Request):
+#     session = request.session
+#     if session.get("SIGNED-IN", False):
+#         return templates.TemplateResponse("member.html", {"request": request})
+#     else:
+#         return RedirectResponse(url="/signout")
 
 @app.post('/error')
 def error(request: Request, message: str = Query("")):
