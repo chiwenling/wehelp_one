@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script>
+        function checkpoint(){
+            let check_btn = document.getElementById("agree_btn");
+            if(!check_btn.checked){
+                alert("Please check the checkbox first");
+                return false;
+            }
+            return true;
+        }
+
+        function redo(){
+            let number = document.getElementById("number").value;
+            if(!(typeof number === 'number' || number > 0)){
+                alert("Please enter a positive number");    
+                return false; 
+            }else{
+                answerPage();
+                return true;
+            }
+        }
+
+        function answerPage() {
+            let number = document.getElementById("number").value;
+            let newUrl = "/square/" + number;
+            window.location.href = newUrl;
+        }
+
+    </script>
+</head>
+<body>
+    <div class="header">歡迎光臨，請輸入帳號密碼</div>
+    <h4>登入系統</h4>
+    <div class="login">
+        <form action="/signin" method="post">
+            <div>
+                <div class="log">
+                    <label for="username">帳號</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="log">
+                    <label for="password">密碼</label>
+                    <input type="text" id="password" name="password">
+                </div>
+                <div class="log">
+                    <label for="agree_btn">同意條款</label>
+                    <input type="checkbox" id="agree_btn" name="agree_btn">
+                </div>
+                <div class="log">
+                    <input type="submit" value="登入" onclick="return checkpoint()">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="calculator">
+            <h4>計算正整數的平方</h4>
+            <div>
+                <div class="log">
+                    <label for="log">正整數</label>
+                    <input type="text" id="number" name="number">
+                </div>
+                <div class="log">
+                    <input type="submit" value="計算" onclick="return redo()">
+                </div> 
+            </div>
+    </div>    
+</body>
+</html>
