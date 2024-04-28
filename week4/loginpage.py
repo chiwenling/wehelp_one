@@ -35,43 +35,32 @@ def login(request: Request, username:str=Form(""),password:str=Form("")):
         error_message = "請輸入帳號密碼"
         query_params = urlencode({"message": error_message})
         error_url = f"/error?{query_params}"
-        return RedirectResponse(url=error_url ) 
-
+        return RedirectResponse(url=error_url, status_code=303) 
+        
     for user in user_db:
         if  username == user["username"] and password == user["password"]:
             set_login_status(request, True) 
-            break
-            
+            break            
            
     if  session["SIGNED-IN"] == True:
-        # return RedirectResponse(url="/member")
-        return templates.TemplateResponse("member.html", {"request": request})
+        return RedirectResponse(url="/member", status_code=303)
     
     else:
         error_message = "帳號、或密碼輸入錯誤"
         query_params = urlencode({"message": error_message})
         error_url = f"/error?{query_params}"
-        return RedirectResponse(url=error_url )
+        return RedirectResponse(url=error_url, status_code=303)
+
 
 @app.get('/member')
 def member(request: Request):
     session = request.session
-    RedirectResponse(url="/member")
     if "SIGNED-IN" in session and session["SIGNED-IN"]:
         return templates.TemplateResponse("member.html", {"request": request})
     else:
         return RedirectResponse(url="/")
 
-# # 原本是post
-# @app.post('/member')
-# def member(request: Request):
-#     session = request.session
-#     if session.get("SIGNED-IN", False):
-#         return templates.TemplateResponse("member.html", {"request": request})
-#     else:
-#         return RedirectResponse(url="/signout")
-
-@app.post('/error')
+@app.get('/error')
 def error(request: Request, message: str = Query("")):
     return templates.TemplateResponse("error.html", {"request": request, "message": message})
 
@@ -83,4 +72,4 @@ def error(request: Request):
 @app.get("/square/{number}")
 def square_result(request: Request, number: int):
     square = number * number
-    return templates.TemplateResponse("squared.html", {"request": request,"message": f"{square}"})    
+    return templates.TemplateResponse("squared.html", {"request": request,"message": f"{square}"})  
