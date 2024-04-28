@@ -1,4 +1,3 @@
-import jinja2
 from fastapi import FastAPI, Request, Form, Depends, Query, Path
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
