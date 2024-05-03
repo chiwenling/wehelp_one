@@ -38,10 +38,14 @@ of time.`
 
 
 Task4 :
-增加數值
+
+增加數值 for 測試
+
 ![image](https://github.com/chiwenling/wehelp_one/blob/6131e7dbde6477159ce23fe3928ff10a5a031c44/week5/4-0.png
 )
+
 ● `SELECT how many rows from the member table.`
+ 
 ![image](https://github.com/chiwenling/wehelp_one/blob/6131e7dbde6477159ce23fe3928ff10a5a031c44/week5/4-1.png)
 
 ● `SELECT the sum of follower_count of all the rows from the member table.`
