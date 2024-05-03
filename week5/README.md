@@ -1,6 +1,6 @@
 #Task2 : 
-##1. Create a new database named website.
-##2. Create a new table named member, in the website database
+#####1. Create a new database named website.
+#####2. Create a new table named member, in the website database
 ![image](https://github.com/chiwenling/wehelp_one/blob/c2af7825e83e383d5abba03662906f78743546fa/week5/2.png)
 
 
