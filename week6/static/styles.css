@@ -1,0 +1,61 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    background-color: rgb(9, 52, 116);
+    color: white;
+}
+
+h4{
+    text-align: center;
+    height: 5px;
+}
+
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.log{
+    margin: 10px;
+    text-align: center;
+}
+
+.greeting{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.return_home{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+.comment{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+.text{
+    text-align: center;
+}
+
+.message_area{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.word{
+    text-align:end; 
+    padding-right: 10px;
+}
+
