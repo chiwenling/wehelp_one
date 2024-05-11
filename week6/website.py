@@ -66,7 +66,6 @@ def register_user(name:str = Form(""), username: str = Form(""), password: str =
 def login(request: Request, member_username:str=Form(""),member_password:str=Form("")):
     
     try:  
-        cursor = website_db.cursor()
         cursor.execute("SELECT id, name FROM member WHERE username = %s AND password = %s", (member_username, member_password))
         
         member = cursor.fetchone()
@@ -135,7 +134,7 @@ def createMessage(request: Request, content:str=Form("")):
 @app.post('/deleteMessage')
 def deleteMessage(request:Request, message_id: int=Form("")):
     print(message_id)
-    cursor = website_db.cursor()
+    
     cursor.execute("DELETE FROM message WHERE message.id = %s ",(message_id,))
     website_db.commit()
     if cursor.rowcount == 1:
