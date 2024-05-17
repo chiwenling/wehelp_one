@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    
+    <script>
+        function checkpoint1(){
+            let name = document.getElementById("name").value;
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (name ===""|| username === ""|| password === ""){
+                alert("請勿空白");
+                return false;
+            }
+            return true;
+            };
+
+        function checkpoint2(){
+            let member_username = document.getElementById("member_username").value;
+            let member_password = document.getElementById("member_password").value;
+
+            if (member_username === ""|| member_password === ""){
+                alert("請輸入帳號密碼");
+                return false;
+            }
+            return true;
+        };
+
+    </script>
+</head>
+<body>
+    <div class="header">歡迎光臨，請註冊登入系統</div>
+    <h4>註冊帳號</h4>
+    <div class="login">
+        <form action="/signup" method="post">
+            <div>
+                <div class="log">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="log">
+                    <label for="username">帳號</label>
+                    <input type="text" id="username" name="username">
+                </div>
+
+                <div class="log">
+                    <label for="password">密碼</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="log">
+                    <input type="submit" value="註冊" onclick="return checkpoint1()">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+    <h4>登入系統</h4>
+    <div class="login">
+        <form action="/signin" method="post" onsubmit="return checkpoint2();">
+            <div>
+                <div class="log">
+                    <label for="member_username">帳號</label>
+                    <input type="text" id="member_username" name="member_username">
+                </div>
+                <div class="log">
+                    <label for="member_password">密碼</label>
+                    <input type="password" id="member_password" name="member_password">
+                </div>
+                <div class="log">
+                    <input type="submit" value="登入">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
