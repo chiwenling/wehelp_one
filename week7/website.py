@@ -152,39 +152,50 @@ def deleteMessage(request:Request, message_id: int=Form("")):
  
 
 @app.get('/api/member')
-async def apidata(username:str=Query("")):
-    cursor = website_db.cursor()
-    cursor.execute("SELECT id, name, username FROM member WHERE username=%s",(username,))
-    result = cursor.fetchone()
-    if  result:
-        print("有會員")
-        return{"data":{
-                "id":result[0],
-                "name":result[1], 
-                "username":result[2]
-            }
-            }
-    else: 
-        print("沒有會員")
-        return{"data": None}
+async def apidata(request:Request,username:str=Query("")):
+    signed_in = request.session.get("SIGNED-IN")
+    if  signed_in == False:
+        return RedirectResponse(url="/member", status_code=303)
+    else:
+        cursor = website_db.cursor()
+        cursor.execute("SELECT id, name, username FROM member WHERE username=%s",(username,))
+        result = cursor.fetchone()
+        if  result:
+            print("有會員")
+            return{"data":{
+                    "id":result[0],
+                    "name":result[1], 
+                    "username":result[2]
+                }
+                }
+        else: 
+            print("沒有會員")
+            return{"data": None}
+        
+    
+
             
 @app.patch('/api/member')
 async def renewname(request:Request):
-    try: 
-        data = await request.json()
-        new_name= data.get("name")
-        member_id = request.session.get("member_id")
-        print(new_name, member_id)
+    signed_in = request.session.get("SIGNED-IN")
+    if  signed_in == False:
+        return RedirectResponse(url="/member", status_code=303)
+    else:
+        try: 
+            data = await request.json()
+            new_name= data.get("name")
+            member_id = request.session.get("member_id")
+            print(new_name, member_id)
 
-        if not member_id:
+            if not member_id:
+                return{"error":True}
+        
+            cursor = website_db.cursor()
+            cursor.execute("UPDATE member SET name = %s WHERE id = %s", (new_name, member_id))
+            website_db.commit()
+            cursor.close()
+            return {"ok": True, "name": new_name}
+
+        except Error as e: 
+            print("沒有更新資料庫")
             return{"error":True}
-    
-        cursor = website_db.cursor()
-        cursor.execute("UPDATE member SET name = %s WHERE id = %s", (new_name, member_id))
-        website_db.commit()
-        cursor.close()
-        return {"ok": True, "name": new_name}
-
-    except Error as e: 
-        print("沒有更新資料庫")
-        return{"error":True}
