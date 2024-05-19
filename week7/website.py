@@ -179,7 +179,7 @@ async def apidata(request:Request,username:str=Query("")):
 async def renewname(request:Request):
     signed_in = request.session.get("SIGNED-IN")
     if  signed_in == False:
-        return {"data": None}
+        return{"error":True}
     else:
         try: 
             data = await request.json()
