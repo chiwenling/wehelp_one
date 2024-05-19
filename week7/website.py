@@ -155,7 +155,7 @@ def deleteMessage(request:Request, message_id: int=Form("")):
 async def apidata(request:Request,username:str=Query("")):
     signed_in = request.session.get("SIGNED-IN")
     if  signed_in == False:
-        return RedirectResponse(url="/member", status_code=303)
+        return {"data": None}
     else:
         cursor = website_db.cursor()
         cursor.execute("SELECT id, name, username FROM member WHERE username=%s",(username,))
@@ -179,7 +179,7 @@ async def apidata(request:Request,username:str=Query("")):
 async def renewname(request:Request):
     signed_in = request.session.get("SIGNED-IN")
     if  signed_in == False:
-        return RedirectResponse(url="/member", status_code=303)
+        return {"data": None}
     else:
         try: 
             data = await request.json()
